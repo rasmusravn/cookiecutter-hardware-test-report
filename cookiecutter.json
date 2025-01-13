@@ -1,0 +1,9 @@
+{
+  "project_name": "Hardware Test Report",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+  "author": "Rasmus Ravn Andersen",
+  "timestamp": "{% now 'local', '%Y-%m-%d %H:%M:%S' %}",
+  "intro": "This report provides an overview of the hardware test project, detailing the methodology, test environment, and scope of the evaluation. The sections that follow describe the objectives, outline the approach, and summarize the findings.",
+  "purpose": "The primary purpose of this document is to ensure the hardware meets the required specifications and reliability standards. Through clear test outcomes, we aim to identify potential issues early, validate performance, and inform future design or manufacturing decisions.",
+  "intended_audience": "Engineering Team, QA, Production"
+}
