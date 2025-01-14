@@ -3,7 +3,17 @@
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
   "author": "Rasmus Ravn Andersen",
   "timestamp": "{% now 'local', '%Y-%m-%d %H:%M:%S' %}",
-  "intro": "This report provides an overview of the hardware test project, detailing the methodology, test environment, and scope of the evaluation. The sections that follow describe the objectives, outline the approach, and summarize the findings.",
-  "purpose": "The primary purpose of this document is to ensure the hardware meets the required specifications and reliability standards. Through clear test outcomes, we aim to identify potential issues early, validate performance, and inform future design or manufacturing decisions.",
-  "intended_audience": "Engineering Team, QA, Production"
+  "intended_audience": "Engineering Team, QA, Production",
+  "context": "Briefly describe what the hardware is, what it’s supposed to do, and why this test is being performed.",
+  "scope": "Define the boundaries of the testing (e.g., which subsystem, version, or prototypes were tested).",
+  "test_goals": "Explain why the testing is necessary (e.g., to validate performance, confirm reliability, ensure compliance with specs).",
+  "success_criteria": "State the conditions or metrics that define a successful test (e.g., specific performance thresholds, environmental tolerances).",
+  "test_setup": "Describe the equipment, tools, fixtures, and software used to run the tests.",
+  "procedures": "Outline the steps you followed to ensure consistency (e.g., calibration details, number of test cycles, test duration, etc.).",
+  "precautions": "Note any special considerations to avoid damaging the hardware or risking personal injury.",
+  "environment": "Detail temperature, humidity, or other environmental conditions relevant to the hardware.",
+  "configuration": "Specify firmware versions, hardware revision levels, or any custom settings.",
+  "constraints": "Mention any known limitations in your testing environment that could affect the results.",
+  "configuration": "Specify firmware versions, hardware revision levels, or any custom settings.",
+  "emails_to": "example@gmail.com"
 }
