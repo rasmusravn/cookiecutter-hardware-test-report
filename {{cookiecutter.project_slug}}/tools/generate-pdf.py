@@ -3,18 +3,13 @@ import os
 import subprocess
 
 
-def main():
+def main(report_file):
     """
     This script combines three Markdown files (1-intro.md, 2-results.md, 3-conclusion.md)
     into a single file named '{{ cookiecutter.project_slug }}.md' under the 'report' directory,
     and then converts the combined file to a PDF using the docker-based pandoc/extra image
     and the Eisvogel LaTeX template.
     """
-
-    # Adjust paths as needed:
-    intro_file = "1-intro.md"
-    results_file = "2-results.md"
-    conclusion_file = "3-conclusion.md"
 
     # The report directory where the final .md and .pdf will go
     report_dir = "report"
@@ -30,17 +25,13 @@ def main():
         os.remove(combined_md)
 
     # List the input files in the order you want to append
-    input_files = [intro_file, results_file, conclusion_file]
-
     # Combine the files into one Markdown
     with open(combined_md, "a", encoding="utf-8") as out_file:
-        for fpath in input_files:
-            if os.path.isfile(fpath):
-                with open(fpath, "r", encoding="utf-8") as in_file:
-                    out_file.write(in_file.read())
-                    out_file.write("\n\n")  # Add spacing between sections
-            else:
-                print(f"Warning: '{fpath}' not found. Skipping.")
+        if os.path.isfile(report_file):
+            with open(report_file, "r", encoding="utf-8") as in_file:
+                out_file.write(in_file.read())
+        else:
+            print(f"Warning: '{report_file}' not found.")
 
     # Use Docker to run pandoc with the Eisvogel template
     docker_cmd = [
@@ -60,6 +51,8 @@ def main():
         "--listings",
         "--template",
         "eisvogel",  # Make sure this template is included in pandoc/extra (it usually is)
+        "--filter",
+        "pandoc-latex-environtment",
         "-o",
         combined_pdf,
     ]
@@ -77,4 +70,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    report_file = "report.md"
+    main(report_file)

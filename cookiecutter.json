@@ -2,6 +2,7 @@
   "project_name": "Hardware Test Report",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
   "author": "Rasmus Ravn Andersen",
+  "hardware": "What hardware are we testing?",
   "timestamp": "{% now 'local', '%Y-%m-%d %H:%M:%S' %}",
   "intended_audience": "Engineering Team, QA, Production",
   "context": "Briefly describe what the hardware is, what it’s supposed to do, and why this test is being performed.",

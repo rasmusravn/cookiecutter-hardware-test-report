@@ -1,3 +1,28 @@
+---
+title: {{cookiecutter.project_name}}
+author: {{cookiecutter.author}}
+date: {{cookiecutter.timestamp}}
+subject: "Hardware Test"
+keywords: [Markdown, Example]
+lang: "en"
+colorlinks: true
+header-includes:
+- |
+  ```{=latex}
+  \usepackage{tcolorbox}
+
+  \newtcolorbox{info-box}{colback=cyan!5!white,arc=0pt,outer arc=0pt,colframe=cyan!60!black}
+  \newtcolorbox{warning-box}{colback=orange!5!white,arc=0pt,outer arc=0pt,colframe=orange!80!black}
+  \newtcolorbox{error-box}{colback=red!5!white,arc=0pt,outer arc=0pt,colframe=red!75!black}
+  ```
+pandoc-latex-environment:
+  tcolorbox: [box]
+  info-box: [info]
+  warning-box: [warning]
+  error-box: [error]
+...
+---
+
 # {{cookiecutter.project_name}}
 
 {{cookiecutter.context}}
@@ -12,31 +37,29 @@
 
 {{cookiecutter.scope}}
 
-## Purpose and Objectives
-
-### Test Goals
+## Test Goals
 
 {{cookiecutter.test_goals}}
 
-### Success Criteria
+## Success Criteria
 
 {{cookiecutter.success_criteria}}
 
-## Test Methodology
-
-### Test Setup
+## Test Setup
 
 {{cookiecutter.test_setup}}
 
 ![Test Setup](./images/setup.jpg)
 
-### Procedures
+## Procedures
 
 {{cookiecutter.procedures}}
 
-### Safe and Precautions
+## Safe and Precautions
 
+::: warning
 {{cookiecutter.precautions}}
+:::
 
 ## Test Conditions and Environment
 
@@ -88,6 +111,10 @@ Discuss potential reasons for failures.
 ### Mitigation Steps
 
 Suggest quick fixes, design revisions, or process changes to address the identified issues.
+
+1. first
+2. second
+3. third
 
 ## Conclusions
 
