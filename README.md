@@ -44,9 +44,7 @@ Cookiecutter will then create a new folder named after your project_slug with th
 ```bash
 
 your_project_slug/
-├── 1-intro.md
-├── 2-results.md
-├── 3-conclusion.md
+├── report.md
 ├── images/
 ├── report/
 └── tools/
@@ -58,10 +56,8 @@ your_project_slug/
 
 ### 3. Fill In Your Report
 
-Open and edit the Markdown files:
+Open and edit the Markdown file:
 
-    1-intro.md
-    2-results.md
-    3-conclusion.md
+    report.md
 
 You can add additional sections, images, or test data as needed. Place images in the images/ folder and reference them in your Markdown using standard Markdown syntax:

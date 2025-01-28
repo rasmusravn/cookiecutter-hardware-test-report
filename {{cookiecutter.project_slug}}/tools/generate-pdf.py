@@ -44,7 +44,7 @@ def main(report_file):
         # Run as the current user, so the generated file is owned by you, not root
         "-u",
         f"{os.getuid()}:{os.getgid()}",
-        "pandoc/extra",  # The Docker image
+        "my-pandoc-extra",  # The Docker image
         combined_md,  # Input file
         "-f",
         "markdown",
