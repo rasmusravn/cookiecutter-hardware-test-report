@@ -52,7 +52,7 @@ def main(report_file):
         "--template",
         "eisvogel",  # Make sure this template is included in pandoc/extra (it usually is)
         "--filter",
-        "pandoc-latex-environtment",
+        "pandoc-latex-environment",
         "-o",
         combined_pdf,
     ]
